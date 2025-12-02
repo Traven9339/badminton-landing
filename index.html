@@ -1,57 +1,66 @@
 <!DOCTYPE html>
-<html lang="ms">
+<html lang="zh-Hans">
 <head>
   <meta charset="UTF-8" />
-  <title>Malaysia Badminton Highlight – Hari Ini!</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta
-    name="description"
-    content="Semak jadual & keputusan badminton Malaysia hari ini – highlight pemain & perlawanan tumpuan, kemudian lompat ke laman penuh untuk data lengkap."
-  />
+  <title>今日大马羽球赛程 & 比分 | Malaysia Badminton Highlight</title>
+  <meta name="description" content="查看今日马来西亚羽球赛程、比分、赛果与重点球员表现。Jadual & keputusan badminton Malaysia hari ini – semua di satu tempat." />
+
+  <!-- 提前握手 Nova88 网址，加快之后跳转速度（把域名换成你真实的 affiliate 域名） -->
+  <link rel="preconnect" href="https://www.nova88105.net" />
 
   <style>
+    :root {
+      --bg-start: #2b80ff;
+      --bg-end: #3eb4ff;
+      --card-bg: #ffffff;
+      --accent: #2563eb;
+      --accent-soft: rgba(37, 99, 235, 0.08);
+      --text-main: #111827;
+      --text-sub: #4b5563;
+      --badge-bg: rgba(255, 255, 255, 0.9);
+      --danger: #ef4444;
+      --radius-xl: 26px;
+      --shadow-xl: 0 26px 60px rgba(15, 23, 42, 0.35);
+    }
+
     * {
       box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
 
     body {
-      margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial,
-        sans-serif;
-      background: linear-gradient(135deg, #007bff, #38b6ff);
       min-height: 100vh;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        sans-serif;
+      background: radial-gradient(circle at top, var(--bg-start), var(--bg-end));
       display: flex;
-      justify-content: center;
       align-items: center;
-      padding: 20px;
-    }
-
-    .wrapper {
-      max-width: 460px;
-      width: 100%;
-      margin: auto;
+      justify-content: center;
+      padding: 16px;
+      color: var(--text-main);
     }
 
     .card {
-      background: #ffffff;
-      border-radius: 26px;
-      box-shadow: 0 18px 50px rgba(0, 0, 0, 0.18);
-      padding: 26px 26px 24px;
-      text-align: left;
-      position: relative;
-      overflow: hidden;
+      max-width: 560px;
+      width: 100%;
+      background: var(--card-bg);
+      border-radius: var(--radius-xl);
+      box-shadow: var(--shadow-xl);
+      padding: 24px 22px 22px;
     }
 
     .badge {
       display: inline-flex;
       align-items: center;
-      padding: 4px 12px;
+      padding: 6px 12px;
       border-radius: 999px;
-      background: #fff4e5;
-      font-size: 12px;
-      color: #b86a00;
-      margin-bottom: 10px;
-      font-weight: 600;
+      background: var(--badge-bg);
+      font-size: 13px;
+      color: var(--text-sub);
+      margin-bottom: 12px;
+      border: 1px solid rgba(148, 163, 184, 0.4);
     }
 
     .badge span {
@@ -60,464 +69,180 @@
 
     h1 {
       font-size: 22px;
-      line-height: 1.3;
-      margin: 0 0 14px;
-      color: #222222;
-    }
-
-    .eyebrow-icon {
-      margin-left: 4px;
-      font-size: 20px;
-    }
-
-    .desc-main {
-      font-size: 14px;
-      line-height: 1.6;
-      color: #444;
+      line-height: 1.35;
       margin-bottom: 10px;
     }
 
-    .desc-cn {
+    .subtitle {
       font-size: 13px;
+      color: var(--text-sub);
       line-height: 1.5;
-      color: #444;
+      margin-bottom: 16px;
+    }
+
+    .highlight-box {
+      background: var(--accent-soft);
+      border-radius: 18px;
+      padding: 10px 12px;
+      margin-bottom: 14px;
+      font-size: 13px;
+      border: 1px solid rgba(37, 99, 235, 0.16);
+    }
+
+    .highlight-title {
+      font-weight: 600;
+      margin-bottom: 4px;
+      font-size: 13px;
+    }
+
+    ul {
+      list-style: none;
       margin-bottom: 12px;
-    }
-
-    .bullet-title {
       font-size: 13px;
-      font-weight: 600;
-      color: #555;
-      margin-top: 6px;
-      margin-bottom: 6px;
+      color: var(--text-sub);
     }
 
-    ul.features {
-      padding-left: 20px;
-      margin: 0 0 12px;
-      font-size: 13px;
-      color: #333;
+    ul li {
+      margin-bottom: 2px;
+      padding-left: 16px;
+      position: relative;
     }
 
-    ul.features li {
-      margin-bottom: 4px;
+    ul li::before {
+      content: "•";
+      position: absolute;
+      left: 4px;
+      color: var(--accent);
     }
 
-    /* ticker 区域 */
-    .ticker-wrapper {
-      margin: 10px 0 16px;
-      padding: 8px 10px;
-      border-radius: 12px;
-      background: #f4f7ff;
-      border: 1px solid #dfe7ff;
-    }
-
-    .ticker-label {
-      font-size: 11px;
-      color: #5b6bb5;
-      font-weight: 600;
-      margin-bottom: 4px;
-      text-transform: uppercase;
-      letter-spacing: 0.04em;
-    }
-
-    .ticker-line {
-      font-size: 13px;
-      color: #273067;
-      display: flex;
-      align-items: center;
-    }
-
-    .ticker-dot {
-      width: 7px;
-      height: 7px;
-      border-radius: 50%;
-      background: #22c55e;
-      margin-right: 7px;
-      box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.3);
-    }
-
-    .ticker-text {
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
-
-    .cta-section {
-      text-align: center;
+    .btn-wrap {
       margin-top: 10px;
-      margin-bottom: 12px;
+      margin-bottom: 10px;
     }
 
-    .cta-button {
+    .btn-main {
+      width: 100%;
+      border: none;
+      border-radius: 999px;
+      padding: 12px 16px;
+      font-size: 15px;
+      font-weight: 600;
+      color: #ffffff;
+      background: linear-gradient(135deg, #2563eb, #1d4ed8);
+      cursor: pointer;
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      width: 100%;
-      max-width: 360px;
-      padding: 12px 18px;
-      border-radius: 999px;
-      border: none;
-      background: linear-gradient(135deg, #0062ff, #1d8bff);
-      color: #ffffff;
+      box-shadow: 0 12px 26px rgba(37, 99, 235, 0.45);
+      transition: transform 0.08s ease, box-shadow 0.08s ease,
+        filter 0.06s ease;
+    }
+
+    .btn-main span {
+      margin-left: 4px;
       font-size: 14px;
-      font-weight: 700;
-      cursor: pointer;
-      box-shadow: 0 8px 18px rgba(0, 102, 255, 0.35);
-      transition: transform 0.08s ease-out, box-shadow 0.08s ease-out,
-        background 0.2s ease-out;
     }
 
-    .cta-button span {
-      display: inline-block;
-      margin-left: 6px;
-      font-size: 12px;
-      font-weight: 500;
-    }
-
-    .cta-button:hover {
+    .btn-main:hover {
       transform: translateY(-1px);
-      box-shadow: 0 12px 24px rgba(0, 102, 255, 0.4);
+      box-shadow: 0 16px 30px rgba(37, 99, 235, 0.55);
+      filter: brightness(1.03);
     }
 
-    .cta-button:active {
-      transform: translateY(0);
-      box-shadow: 0 6px 14px rgba(0, 102, 255, 0.35);
+    .btn-main:active {
+      transform: translateY(1px);
+      box-shadow: 0 8px 18px rgba(37, 99, 235, 0.5);
+      filter: brightness(0.97);
     }
 
-    .notice {
-      font-size: 11px;
-      line-height: 1.5;
-      color: #777;
-      margin-top: 4px;
-    }
-
-    .notice strong {
-      font-weight: 600;
-      color: #555;
-    }
-
-    .footer-meta {
-      font-size: 10px;
-      text-align: center;
-      color: #9aa0b3;
-      margin-top: 8px;
-    }
-
-    /* Loading overlay */
-    .overlay {
-      position: fixed;
-      inset: 0;
-      background: rgba(0, 16, 40, 0.72);
-      display: none;
-      align-items: center;
-      justify-content: center;
-      z-index: 999;
-    }
-
-    .overlay.active {
-      display: flex;
-    }
-
-    .overlay-card {
-      background: #ffffff;
-      border-radius: 18px;
-      padding: 20px 22px 18px;
-      width: 90%;
-      max-width: 360px;
-      text-align: left;
-      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.45);
-    }
-
-    .overlay-title {
-      font-size: 15px;
-      font-weight: 700;
-      margin: 0 0 4px;
-      color: #1f2937;
-    }
-
-    .overlay-subtitle {
-      font-size: 12px;
-      color: #4b5563;
-      margin-bottom: 14px;
-    }
-
-    .progress-track {
-      width: 100%;
-      height: 9px;
-      border-radius: 999px;
-      background: #e5e7eb;
-      overflow: hidden;
-      margin-bottom: 8px;
-    }
-
-    .progress-bar {
-      height: 100%;
-      width: 0;
-      border-radius: 999px;
-      background: linear-gradient(135deg, #0ea5e9, #22c55e);
-      transition: width 0.18s ease-out;
-    }
-
-    .progress-text {
+    .note {
       font-size: 11px;
       color: #6b7280;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+      line-height: 1.5;
+      margin-top: 2px;
     }
 
-    .spinner {
-      width: 16px;
-      height: 16px;
-      border-radius: 999px;
-      border: 2px solid #d1d5db;
-      border-top-color: #2563eb;
-      animation: spin 0.8s linear infinite;
-      margin-right: 6px;
-    }
-
-    .spinner-wrap {
-      display: inline-flex;
-      align-items: center;
-      font-size: 11px;
-      color: #4b5563;
-    }
-
-    @keyframes spin {
-      to {
-        transform: rotate(360deg);
-      }
-    }
-
-    /* 点击次数小提示（只在本机统计） */
-    .click-info {
+    .footer-text {
+      margin-top: 8px;
       font-size: 10px;
       color: #9ca3af;
       text-align: center;
-      margin-top: 4px;
     }
 
     @media (max-width: 480px) {
       .card {
-        padding: 22px 20px 20px;
+        padding: 20px 16px 18px;
+        border-radius: 22px;
       }
-
       h1 {
-        font-size: 20px;
-      }
-
-      .cta-button {
-        font-size: 13px;
+        font-size: 19px;
       }
     }
   </style>
-
-  <!-- 可选：Google Analytics（如果你要真正统计 Ads 流量，把 G-XXXXXXXX 换成你的 ID） -->
-  <!--
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXX"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-XXXXXXXX');
-  </script>
-  -->
 </head>
+
 <body>
-  <div class="wrapper">
-    <div class="card">
-      <div class="badge">
-        🔥
-        <span>Malaysia Badminton Highlight</span>
-      </div>
-
-      <h1>
-        MALAYSIA BADMINTON<br />
-        HIGHLIGHT – HARI INI! <span class="eyebrow-icon">🏸</span>
-      </h1>
-
-      <p class="desc-main">
-        Semak perlawanan badminton paling hangat hari ini – jadual,
-        keputusan &amp; prestasi pemain terkini untuk Malaysia dan
-        perlawanan pilihan.
-      </p>
-
-      <p class="desc-cn">
-        想看今天马来西亚羽球最新赛程 / 比分 / 球员表现？这里帮你整理重点，
-        一键跳转到完整数据页面。
-      </p>
-
-      <p class="bullet-title">Apa yang anda akan nampak:</p>
-      <ul class="features">
-        <li>Jadual &amp; keputusan live untuk perlawanan penting</li>
-        <li>Highlight pemain Malaysia &amp; aksi tumpuan</li>
-        <li>Senang untuk rakan kongsi &amp; pemain buat rujukan pantas</li>
-      </ul>
-
-      <!-- Ticker: 今日热门比赛 -->
-      <div class="ticker-wrapper">
-        <div class="ticker-label">Hari ini · Perlawanan tumpuan</div>
-        <div class="ticker-line">
-          <div class="ticker-dot"></div>
-          <div id="tickerText" class="ticker-text">
-            Memuatkan perlawanan hari ini…
-          </div>
-        </div>
-      </div>
-
-      <div class="cta-section">
-        <button id="ctaButton" class="cta-button">
-          LIHAT DATA PENUH BADMINTON HARI INI
-          <span>查看今日羽球完整数据 ➜</span>
-        </button>
-      </div>
-
-      <p class="notice">
-        *Halaman ini hanya memaparkan info badminton dan akan membawa anda ke
-        laman penuh rakan kongsi kami selepas anda klik butang di atas。<br />
-        *本页面只整理羽球相关资讯，点击按钮后会跳转到合作伙伴的体育数据页面。
-      </p>
-
-      <div class="click-info" id="clickInfo">
-        Klik butang ini 0 kali di peranti ini.
-      </div>
-
-      <div class="footer-meta">
-        Untuk tujuan hiburan &amp; rujukan sahaja · Sila bermain secara
-        bertanggungjawab
-      </div>
+  <main class="card">
+    <div class="badge">
+      🔥 <span>Malaysia Badminton Highlight</span>
     </div>
-  </div>
 
-  <!-- Loading Overlay -->
-  <div id="overlay" class="overlay" aria-hidden="true">
-    <div class="overlay-card">
-      <h2 class="overlay-title">Sedang memuat data badminton…</h2>
-      <p class="overlay-subtitle">
-        Sila tunggu seketika – kami sedang sambung ke halaman penuh untuk
-        jadual &amp; keputusan hari ini.
-      </p>
+    <h1>
+      今日大马羽球赛程 & 最新比分<br />
+      <span style="font-size: 90%; color: #2563eb">
+        Jadual & Keputusan Hari Ini
+      </span>
+    </h1>
 
-      <div class="progress-track">
-        <div id="progressBar" class="progress-bar"></div>
+    <p class="subtitle">
+      想看今天大马球员赛程、比分、赛果、表现总结？<br />
+      Jadual & keputusan badminton Malaysia – semua di satu tempat.
+    </p>
+
+    <section class="highlight-box" aria-label="Today focus match">
+      <div class="highlight-title">
+        🎯 今日焦点赛 / Perlawanan Tumpuan Hari Ini
       </div>
-
-      <div class="progress-text">
-        <span id="progressLabel">Memproses permintaan…</span>
-        <span class="spinner-wrap">
-          <span class="spinner"></span> Menghubungi server
+      <div style="font-size: 13px">
+        李梓嘉 vs 对手（示例）｜Lee Zii Jia vs Opponent<br />
+        <span style="color: #6b7280">
+          开赛时间 Jam mula: 7:00 PM （以官方赛程为准）
         </span>
       </div>
+    </section>
+
+    <ul>
+      <li>✔ 今日赛程、场次、开始时间</li>
+      <li>✔ 实时比分 & 赛果（live & final result）</li>
+      <li>✔ 大马球员表现一览 | Highlight pemain Malaysia</li>
+      <li>✔ 方便分享给朋友 / 群组 – senang untuk share</li>
+    </ul>
+
+    <div class="btn-wrap">
+      <!-- ✅ 把下面 href 改成你的 Nova88 Affiliate 链接 -->
+<a 
+  class="btn-main"
+  href="https://www.nova88105.net/en/promotion?affCode=63998&clickId=1220026"
+  target="_blank"
+  rel="noopener noreferrer"
+>
+    <span>
+        今日赛程 & 比分（打开即可查看）｜ Mahu tengok keputusan Malaysia sekarang? Klik sini →
+    </span>
+</a>
+
     </div>
-  </div>
 
-  <script>
-    // ======== 你自己的 Affiliate 链接 =========
-    const AFFILIATE_URL =
-      "https://go.nova88105.net/promotion/63998/en/facebook/index.html";
+    <p class="note">
+      本页面只整理羽球资讯，点击按钮后将带你前往合作体育平台查看完整数据。<br />
+      Halaman ini hanya susun info badminton. Butang di atas akan
+      bawa anda ke laman rakan kongsi kami untuk data penuh.
+    </p>
 
-    // ======== 热门比赛滚动文字（你可以随时改内容） =========
-    const tickerMessages = [
-      "🇲🇾 Lee Zii Jia vs Naraoka – keputusan live dikemas kini",
-      "🔥 Goh Jin Wei hari ini – aksi tumpuan peminat Malaysia",
-      "🏸 Beregu Malaysia perlawanan penting malam ini",
-      "📊 Statistik ranking & keputusan terkini untuk pemain pilihan",
-    ];
-
-    let tickerIndex = 0;
-    const tickerTextEl = document.getElementById("tickerText");
-
-    function updateTicker() {
-      tickerTextEl.textContent = tickerMessages[tickerIndex];
-      tickerIndex = (tickerIndex + 1) % tickerMessages.length;
-    }
-
-    // 初始显示 + 每 3 秒轮播一次
-    updateTicker();
-    setInterval(updateTicker, 3000);
-
-    // ======== 本机点击计数（localStorage，只记录这台设备） =========
-    const CLICK_KEY = "badminton_lp_clicks";
-    const clickInfoEl = document.getElementById("clickInfo");
-
-    function getClickCount() {
-      const raw = localStorage.getItem(CLICK_KEY);
-      const n = parseInt(raw, 10);
-      return isNaN(n) ? 0 : n;
-    }
-
-    function setClickCount(n) {
-      localStorage.setItem(CLICK_KEY, String(n));
-    }
-
-    function refreshClickInfo() {
-      const n = getClickCount();
-      clickInfoEl.textContent =
-        "Klik butang ini " + n + " kali di peranti ini.";
-    }
-
-    refreshClickInfo();
-
-    // ======== CTA 按钮：显示 Loading + 假进度条 + 跳转 =========
-    const ctaButton = document.getElementById("ctaButton");
-    const overlay = document.getElementById("overlay");
-    const progressBar = document.getElementById("progressBar");
-    const progressLabel = document.getElementById("progressLabel");
-
-    ctaButton.addEventListener("click", function (e) {
-      e.preventDefault();
-
-      // 增加本机点击数
-      const current = getClickCount() + 1;
-      setClickCount(current);
-      refreshClickInfo();
-
-      // 如果你有启用 GA，上报一个事件（否则这段不会运行任何东西）
-      if (typeof gtag === "function") {
-        try {
-          gtag("event", "cta_click", {
-            event_category: "landing_page",
-            event_label: "badminton_highlight_ms",
-          });
-        } catch (err) {
-          // ignore
-        }
-      }
-
-      // 显示 overlay
-      overlay.classList.add("active");
-      overlay.setAttribute("aria-hidden", "false");
-      progressBar.style.width = "0%";
-      progressLabel.textContent = "Memproses permintaan…";
-
-      let progress = 0;
-      const targetTime = 1700; // 总时长约 1.7 秒
-      const intervalMs = 120;
-      const steps = Math.ceil(targetTime / intervalMs);
-      const increment = 100 / steps;
-
-      const timer = setInterval(function () {
-        progress = Math.min(100, progress + increment);
-        progressBar.style.width = progress.toFixed(0) + "%";
-
-        if (progress < 40) {
-          progressLabel.textContent = "Menyambung ke server…";
-        } else if (progress < 75) {
-          progressLabel.textContent = "Memuat jadual & keputusan hari ini…";
-        } else if (progress < 100) {
-          progressLabel.textContent = "Hampir siap! Menyediakan halaman penuh…";
-        }
-
-        if (progress >= 100) {
-          clearInterval(timer);
-          // 略微再等一下，体验更自然
-          setTimeout(function () {
-            window.location.href = AFFILIATE_URL;
-          }, 250);
-        }
-      }, intervalMs);
-    });
-  </script>
+    <p class="footer-text">
+      Untuk tujuan hiburan & rujukan sahaja · Sila bermain secara
+      bertanggungjawab.
+    </p>
+  </main>
 </body>
 </html>
