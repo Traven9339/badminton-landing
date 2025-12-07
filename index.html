@@ -3,10 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>今日大马羽球赛程 & 比分 | Malaysia Badminton Highlight</title>
-  <meta name="description" content="查看今日马来西亚羽球赛程、比分、赛果与重点球员表现。Jadual & keputusan badminton Malaysia hari ini – semua di satu tempat." />
+  <title>今日大马羽球赛程 & 最新比分 | Jadual Badminton Malaysia</title>
 
-  <!-- 提前握手 Nova88 网址，加快之后跳转速度 -->
+  <meta name="description" content="查看今日马来西亚羽球赛程、比分、赛果。Jadual & keputusan badminton Malaysia hari ini." />
   <link rel="preconnect" href="https://www.nova88105.net" />
 
   <style>
@@ -18,24 +17,18 @@
       --accent-soft: rgba(37, 99, 235, 0.08);
       --text-main: #111827;
       --text-sub: #4b5563;
-      --badge-bg: rgba(255, 255, 255, 0.9);
+      --danger: #ef4444;
       --radius-xl: 26px;
       --shadow-xl: 0 26px 60px rgba(15, 23, 42, 0.35);
     }
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
 
     body {
       min-height: 100vh;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
-        sans-serif;
+      font-family: system-ui, sans-serif;
       background: radial-gradient(circle at top, var(--bg-start), var(--bg-end));
       display: flex;
-      align-items: center;
       justify-content: center;
       padding: 16px;
       color: var(--text-main);
@@ -47,92 +40,42 @@
       background: var(--card-bg);
       border-radius: var(--radius-xl);
       box-shadow: var(--shadow-xl);
-      padding: 24px 22px 22px;
+      padding: 24px;
     }
 
     .badge {
-      display: inline-flex;
-      align-items: center;
-      padding: 6px 12px;
+      display: inline-block;
+      background: rgba(37,99,235,.1);
+      padding: 6px 14px;
       border-radius: 999px;
-      background: var(--badge-bg);
       font-size: 13px;
-      color: var(--text-sub);
-      margin-bottom: 12px;
-      border: 1px solid rgba(148, 163, 184, 0.4);
-    }
-
-    .badge span {
-      margin-left: 6px;
-    }
-
-    h1 {
-      font-size: 22px;
-      line-height: 1.35;
-      margin-bottom: 10px;
-    }
-
-    .subtitle {
-      font-size: 13px;
-      color: var(--text-sub);
-      line-height: 1.5;
       margin-bottom: 12px;
     }
 
-    /* ✅ 新会员五大福利图片 */
+    h1 { font-size: 22px; margin-bottom: 6px; }
+    .subtitle { font-size: 13px; color: var(--text-sub); margin-bottom: 16px; }
+
     .bonus-img {
       width: 100%;
       max-width: 420px;
       display: block;
-      margin: 6px auto 4px;
+      margin: 10px auto;
       border-radius: 18px;
       box-shadow: 0 18px 40px rgba(15, 23, 42, 0.35);
     }
 
-    .bonus-caption {
-      font-size: 12px;
-      color: #6b7280;
+    .bonus-tip {
+      font-size: 13px;
       text-align: center;
-      margin-bottom: 14px;
+      color: #374151;
+      margin-bottom: 10px;
     }
 
-    .highlight-box {
-      background: var(--accent-soft);
-      border-radius: 18px;
-      padding: 10px 12px;
-      margin-bottom: 14px;
+    .urgent {
+      text-align: center;
       font-size: 13px;
-      border: 1px solid rgba(37, 99, 235, 0.16);
-    }
-
-    .highlight-title {
-      font-weight: 600;
-      margin-bottom: 4px;
-      font-size: 13px;
-    }
-
-    ul {
-      list-style: none;
-      margin-bottom: 12px;
-      font-size: 13px;
-      color: var(--text-sub);
-    }
-
-    ul li {
-      margin-bottom: 2px;
-      padding-left: 16px;
-      position: relative;
-    }
-
-    ul li::before {
-      content: "•";
-      position: absolute;
-      left: 4px;
-      color: var(--accent);
-    }
-
-    .btn-wrap {
-      margin-top: 10px;
+      color: var(--danger);
+      font-weight: 700;
       margin-bottom: 10px;
     }
 
@@ -140,138 +83,88 @@
       width: 100%;
       border: none;
       border-radius: 999px;
-      padding: 12px 16px;
-      font-size: 15px;
-      font-weight: 600;
-      color: #ffffff;
+      padding: 14px;
+      font-size: 16px;
+      font-weight: 700;
+      color: #fff;
       background: linear-gradient(135deg, #2563eb, #1d4ed8);
       cursor: pointer;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 12px 26px rgba(37, 99, 235, 0.45);
-      transition: transform 0.08s ease, box-shadow 0.08s ease,
-        filter 0.06s ease;
+      text-align: center;
+      display: block;
+      box-shadow: 0 14px 32px rgba(37, 99, 235, 0.55);
+      margin-bottom: 14px;
       text-decoration: none;
     }
 
-    .btn-main span {
-      font-size: 14px;
-      line-height: 1.4;
-      text-align: center;
+    .highlight-box {
+      background: var(--accent-soft);
+      border-radius: 18px;
+      padding: 12px;
+      font-size: 13px;
+      margin-bottom: 14px;
     }
 
-    .btn-main:hover {
-      transform: translateY(-1px);
-      box-shadow: 0 16px 30px rgba(37, 99, 235, 0.55);
-      filter: brightness(1.03);
-    }
-
-    .btn-main:active {
-      transform: translateY(1px);
-      box-shadow: 0 8px 18px rgba(37, 99, 235, 0.5);
-      filter: brightness(0.97);
-    }
-
-    .note {
-      font-size: 11px;
-      color: #6b7280;
-      line-height: 1.5;
-      margin-top: 2px;
-    }
+    ul { list-style: none; font-size: 13px; color: var(--text-sub); }
+    ul li { margin-bottom: 4px; }
 
     .footer-text {
-      margin-top: 8px;
-      font-size: 10px;
+      margin-top: 10px;
+      font-size: 11px;
       color: #9ca3af;
       text-align: center;
-    }
-
-    @media (max-width: 480px) {
-      .card {
-        padding: 20px 16px 18px;
-        border-radius: 22px;
-      }
-      h1 {
-        font-size: 19px;
-      }
     }
   </style>
 </head>
 
 <body>
   <main class="card">
-    <div class="badge">
-      🔥 <span>Malaysia Badminton Highlight</span>
+
+    <div class="badge">🔥 Malaysia Badminton Highlight</div>
+
+    <h1>今日大马羽球赛程 & 最新比分</h1>
+    <p class="subtitle">
+      Jadual & Keputusan Badminton Hari Ini  
+      <br/>Semua perlawanan, skor & keputusan – di satu tempat.
+    </p>
+
+    <!-- ✅ 福利主图 -->
+    <img src="nova88-bonus.png" alt="Nova88 Bonus Ahli Baru" class="bonus-img" />
+
+    <div class="urgent">
+      ⏰ Tawaran Terhad Minggu Ini · Untuk Pemain Malaysia Sahaja
     </div>
 
-    <h1>
-      今日大马羽球赛程 & 最新比分<br />
-      <span style="font-size: 90%; color: #2563eb">
-        Jadual & Keputusan Hari Ini
-      </span>
-    </h1>
+    <div class="bonus-tip">
+      ✅ 新会员五大福利 | Bonus Ahli Baru：
+      <br/>150% Sports · 88% Live Casino · 100% Slot · 288% Slot · 88% E-Sports
+    </div>
 
-    <p class="subtitle">
-      想看今天大马球员赛程、比分、赛果、表现总结？<br />
-      Jadual & keputusan badminton Malaysia – semua di satu tempat.
-    </p>
+    <!-- ✅ 主转化按钮（中 + 马） -->
+    <a class="btn-main"
+       href="https://www.nova88105.net/en/promotion?affCode=63998&clickId=1220026"
+       target="_blank" rel="noopener">
+      🎁 立即注册领取奖励  
+      <br/>Daftar Sekarang & Tuntut Bonus →
+    </a>
 
-    <!-- ✅ 新会员五大福利 Banner 图 -->
-    <img
-      src="nova88-bonus.png"
-      alt="Nova88 新会员五大福利"
-      class="bonus-img"
-    />
-    <p class="bonus-caption">
-      新会员五大福利：150% Sportsbook、88% Live Casino、100% Slot、288% Slot 以及 88% E-Sports Welcome Bonus
-    </p>
-
-    <section class="highlight-box" aria-label="Today focus match">
-      <div class="highlight-title">
-        🎯 今日焦点赛 / Perlawanan Tumpuan Hari Ini
-      </div>
-      <div style="font-size: 13px">
-        李梓嘉 vs 对手（示例）｜Lee Zii Jia vs Opponent<br />
-        <span style="color: #6b7280">
-          开赛时间 Jam mula: 7:00 PM （以官方赛程为准）
-        </span>
-      </div>
+    <!-- ✅ 羽球资讯 -->
+    <section class="highlight-box">
+      🎯 今日焦点赛 / Perlawanan Tumpuan Hari Ini  
+      <br/>李梓嘉 vs 对手（示例）  
+      <br/>Jam mula: 7:00 PM（官方为准）
     </section>
 
     <ul>
-      <li>✔ 今日赛程、场次、开始时间</li>
-      <li>✔ 实时比分 & 赛果（live & final result）</li>
-      <li>✔ 大马球员表现一览 | Highlight pemain Malaysia</li>
-      <li>✔ 新会员可同时领取 5 大欢迎奖励</li>
-      <li>✔ 方便分享给朋友 / 群组 – senang untuk share</li>
+      <li>✔ 今日赛程 & 开始时间</li>
+      <li>✔ 实时比分 & Final result</li>
+      <li>✔ 大马球员表现一览</li>
+      <li>✔ Senang kongsi kepada rakan & grup WhatsApp</li>
     </ul>
 
-    <div class="btn-wrap">
-      <!-- ✅ 这里是你的 Nova88 Affiliate 链接，保持不变就可以 -->
-      <a
-        class="btn-main"
-        href="https://www.nova88105.net/en/promotion?affCode=63998&clickId=1220026"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <span>
-          今日赛程 & 比分 + 新会员五大福利<br />
-          Mahu tengok keputusan Malaysia & claim bonus? Klik sini →
-        </span>
-      </a>
-    </div>
-
-    <p class="note">
-      本页面只整理羽球资讯，点击按钮后将带你前往合作体育平台查看完整数据与优惠详情。<br />
-      Halaman ini hanya susun info badminton. Butang di atas akan
-      bawa anda ke laman rakan kongsi kami untuk data penuh & promosi.
-    </p>
-
     <p class="footer-text">
-      Untuk tujuan hiburan & rujukan sahaja · Sila bermain secara
-      bertanggungjawab.
+      本页面仅供羽球资讯参考 · Untuk hiburan sahaja · Sila bermain secara bertanggungjawab
     </p>
+
   </main>
 </body>
 </html>
